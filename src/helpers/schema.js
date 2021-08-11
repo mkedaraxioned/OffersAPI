@@ -15,7 +15,8 @@ const schemas = {
     connector:Joi.string(),
     price:Joi.number(),
     link: Joi.string()
-    .pattern(new RegExp("((http|https)://)(www.)?" + "[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]" + "{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)")),
+    .pattern(new RegExp("((http|https)://)(www.)?" + "[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]" + "{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)"))
+    .message('Please Enter a valid link'),
     quantity:Joi.number()
   })
 }
