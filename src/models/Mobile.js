@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const mobileSchema = new mongoose.Schema({
   name: {
     type:String,
-    required: [true,'Please insert product name']
+    required: [true,'Please insert product name'],
+    unique: true
   },
   company: {
     type:String,
@@ -15,7 +16,16 @@ const mobileSchema = new mongoose.Schema({
   memory: String,
   connector:String,
   price:Number,
-  link:String,
+  link:{
+    type:String,
+    validate: {
+      validator :function (link) {
+        return new RegExp("((http|https)://)(www.)?" + "[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]" + "{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)").test(link);
+      },
+      message: 'Enter a valid link'
+    }
+
+  },
   quantity:Number
 });
 
