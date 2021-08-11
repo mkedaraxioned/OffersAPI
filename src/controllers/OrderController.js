@@ -6,7 +6,7 @@ class OrderController {
         custName: req.body.custName,
         mobile: req.body.mobile,
         quantity: req.body.quantity,
-        email: "xyzs@gmail.com",
+        email: req.body.email,
         contactNo: req.body.contactNo,
         deliveryLoc: {
           city:req.body.city,

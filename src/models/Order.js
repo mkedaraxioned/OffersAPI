@@ -14,8 +14,7 @@ const orderSchema = new mongoose.Schema({
   quantity: [{type:Number}],
   email: {
     type:String,
-    required: [true,'Enter the email field'],
-    unique:false
+    required: [true,'Enter the email field']
   },
   contactNo: Number,
   deliveryLoc: {
