@@ -21,6 +21,16 @@ class MobileController {
       next(error);
       }
   }
+
+  getMobiles = async (req,res,next) => {
+    try {
+      const mobiles = await Mobile.find();
+      if (!mobiles) return res.status(404).send({ message: 'No mobiles found' });
+      return res.status(201).send({message:'Mobile available',mobiles});
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = MobileController;

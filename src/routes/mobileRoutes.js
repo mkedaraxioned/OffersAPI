@@ -7,5 +7,6 @@ const errorHandler = require('../middlewares/error');
 const schemas =  require('../helpers/schema');
 const validateData = require('../middlewares/validation');
 router.route('/')
-  .post(validateData(schemas.mobile),mobileControllerObj.addMobile,errorHandler);
+  .post(validateData(schemas.mobile),mobileControllerObj.addMobile,errorHandler)
+  .get(mobileControllerObj.getMobiles,errorHandler);
 module.exports = router;
