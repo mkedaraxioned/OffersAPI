@@ -7,5 +7,6 @@ const errorHandler = require('../middlewares/error');
 const schemas =  require('../helpers/schema');
 const validateData = require('../middlewares/validation');
 router.route('/')
-  .post(validateData(schemas.order),orderControllerObj.addOrder,errorHandler);
+  .post(validateData(schemas.order),orderControllerObj.addOrder,errorHandler)
+  .get(orderControllerObj.getOrders,errorHandler);
 module.exports = router;
