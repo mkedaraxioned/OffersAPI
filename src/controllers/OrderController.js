@@ -5,7 +5,6 @@ class OrderController {
     try {
       const order = {
         custName: req.body.custName,
-        // mobile: req.body.mobile,
         mobiles: req.body.mobiles,
         quantity: req.body.quantity,
         email: req.body.email,

@@ -22,7 +22,6 @@ const schemas = {
   }),
   order: Joi.object({
     custName: Joi.string(),
-    // mobiles: Joi.objectId(),
     mobiles: Joi.array().items(Joi.objectId()),
     quantity: Joi.array().items(Joi.number()) ,
     email: Joi.string()
