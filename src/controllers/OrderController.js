@@ -24,7 +24,7 @@ class OrderController {
 
   getOrders = async (req,res,next) => {
     try {
-      const orders = await Order.find({}, {_id:0,orderId:"$_id",mobile:1,quantity:1})
+      const orders = await Order.find({}, {_id:0,orderId:"$_id",custName:1,email:1,mobile:1,quantity:1})
       .populate({path:'mobiles',select:'name company price link quantity'}).exec((err, mobiles) => {       //works with .populate('mobiles')
                 if(err) return res.status(404).send({ error:'Orders not found' });
          return res.status(200).send({ message:'orders availble',orders:mobiles });  
